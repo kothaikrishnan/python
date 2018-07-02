@@ -1,0 +1,96 @@
+import csv
+
+file1=csv.writer(open('employee.csv','w'))
+file1.writerows([('sam',22,22000),('dany',34,34000),('gowz',21,21000),('ram',40,40000),
+('sita',20,20000),('agi',26,26000),('padhu',40,40000),('swatz',27,27000),('shenz',40,40000),('kotz',25,25000)])
+
+file1=open('employee.csv','r')
+reader=csv.reader(file1)
+for row in reader:
+  print(row)
+
+['sam', '22', '22000']
+[]
+['dany', '34', '34000']
+[]
+['gowz', '21', '21000']
+[]
+['ram', '40', '40000']
+[]
+['sita', '20', '20000']
+[]
+['agi', '26', '26000']
+[]
+['padhu', '40', '40000']
+[]
+['swatz', '27', '27000']
+[]
+['shenz', '40', '40000']
+[]
+['kotz', '25', '25000']
+[]
+
+
+import csv
+file2=csv.writer(open('person.csv','w'))
+file2.writerows([('sam',22,22000),('mark',34,34000),('gowz',21,21000),('ram',20,40000),('sita',20,20000),
+('agi',26,25000),('padhu',40,40000),('swatz',27,50000),('shenz',40,40000),('siva',25,25000)])
+
+file2=open('person.csv','r')
+reader=csv.reader(file2)
+for row in reader:
+  print(row)
+
+['sam', '22', '22000']
+[]
+['mark', '34', '34000']
+[]
+['gowz', '21', '21000']
+[]
+['ram', '20', '40000']
+[]
+['sita', '20', '20000']
+[]
+['agi', '26', '25000']
+[]
+['padhu', '40', '40000']
+[]
+['swatz', '27', '50000']
+[]
+['shenz', '40', '40000']
+[]
+['siva', '25', '25000']
+[]
+
+file1=open('employee.csv','r')
+f1=file1.readlines()
+file2=open('person.csv','r')
+f2=file2.readlines()
+
+output=open('diffile.csv','w')
+for line in f2:
+  if line not in f1:
+    print(line)
+
+mark,34,34000
+ram,20,40000
+agi,26,25000
+swatz,27,50000
+siva,25,25000
+
+output1=open('similar.csv','w')
+for line in f2:
+  if line in f1:
+    print(line)
+
+
+sam,22,22000
+gowz,21,21000
+sita,20,20000
+padhu,40,40000
+shenz,40,40000
+
+
+
+
+
